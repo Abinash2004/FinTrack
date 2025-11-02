@@ -1,5 +1,5 @@
-import { Pool } from "pg";
-import dotenv from "dotenv";
+import { Pool } from 'pg';
+import dotenv from 'dotenv';
 
 dotenv.config({ quiet: true });
 
@@ -13,12 +13,12 @@ const pool = new Pool({
   port: Number(DB_PORT)
 });
 
-pool.on("connect", () => {
-  console.error("connection pool established with database.");
+pool.on('connect', () => {
+  console.error('connection pool established with database');
 });
 
-pool.on("error", (err) => {
-  console.error("connection pool error:", err);
+pool.on('error', (err) => {
+  console.error('connection pool error:', err);
   process.exit(1);
 });
 

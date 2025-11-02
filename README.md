@@ -8,7 +8,7 @@ Primary intention is to practice **TypeScript** and **PostgreSQL** integration w
 ## Tech Stack
 - **Frontend:** React + TypeScript  
 - **Backend:** Node.js (Express) + TypeScript  
-- **Database:** PostgreSQL  
+- **Database:** PostgreSQL (via Docker Compose)  
 - **Auth:** OAuth 2.0 + JWT  
 
 ---
@@ -16,9 +16,12 @@ Primary intention is to practice **TypeScript** and **PostgreSQL** integration w
 ## Completed Tasks
 - Docker setup for PostgreSQL  
 - Connected Express server to PostgreSQL database  
+- Implemented migration system for managing SQL schema files  
+- Created initial database schema (`users`, `accounts`, `categories`, `transactions`)  
+- Added TypeScript interfaces for all database entities  
 
 ---
 
 ## Ongoing Development
-- Authentication (JWT & OAuth) 
-- Schema Design  
+- Authentication (JWT & OAuth)  
+- Dummy data migrations for testing  
