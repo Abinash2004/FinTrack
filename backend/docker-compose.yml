@@ -13,5 +13,14 @@ services:
     volumes:
       - fintrack_pgdata:/var/lib/postgresql
 
+  redis:
+    image: redis:7
+    container_name: fintrack-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - fintrack_redis_data:/data
+
 volumes:
   fintrack_pgdata:
+  fintrack_redis_data:
