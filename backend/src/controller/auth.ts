@@ -4,9 +4,10 @@ import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import pool from '../config/database';
 import { User } from '../types/db_types'
+import { sendMail } from "../utils/mailer";
+import { JwtPayload } from '../types/auth';
 import { Request, Response } from 'express';
 import { signAccess, signRefresh } from '../utils/jwt';
-import { JwtPayload } from '../types/auth';
 import { validateUserCredential, parseExpiryToMs, generateOTP } from '../utils/auth';
 
 dotenv.config({ quiet: true });
@@ -36,8 +37,11 @@ async function initiateUserSignUp(req: Request, res: Response) {
         const otp = generateOTP(6);
         await redis.setex(`otp:${email}`, 300, JSON.stringify({ otp, name, password_hash }));
 
-        // send otp to user email
-        console.log(otp);
+        await sendMail(
+            email,
+            "FinTrack OTP Verification",
+            `Your OTP is ${otp}. It expires in 5 minutes.`
+        );
 
         return res.status(200).json({
             status: "success",
