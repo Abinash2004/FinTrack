@@ -2,7 +2,9 @@ CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   email VARCHAR(150) NOT NULL UNIQUE,
-  password_hash TEXT NOT NULL,
+  password_hash TEXT,
+  provider VARCHAR(100) DEFAULT 'local',
+  provider_id VARCHAR(200), 
   created_at TIMESTAMP DEFAULT NOW()
 );
 

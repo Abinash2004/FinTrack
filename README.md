@@ -18,8 +18,10 @@ Primary intention is to practice **TypeScript** and **PostgreSQL** integration w
 - Implemented migration system for managing SQL schema files  
 - Secure JWT authentication (access + refresh tokens)
 - User signup with email OTP (Redis + Nodemailer)
+- Google OAuth integration
+- Automatic account linking for existing local users
 
 ---
 
 ## Ongoing Development
-- OAuth integration   
+- CRUD APIs for accounts, categories, and transactions

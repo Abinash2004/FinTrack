@@ -122,7 +122,14 @@ async function userSignIn(req: Request, res: Response) {
             });
         }
 
-        const valid = await bcrypt.compare(password, user.password_hash);
+        if (user.provider === "google" && !user.password_hash) {
+            return res.status(401).json({
+                status: 'failed',
+                message: 'This account uses Google login. Please sign in with Google.'
+            });
+        }
+
+        const valid = await bcrypt.compare(password, user.password_hash!);
         if (!valid) {
             return res.status(401).json({
                 status: 'failed',
