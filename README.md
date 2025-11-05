@@ -14,14 +14,12 @@ Primary intention is to practice **TypeScript** and **PostgreSQL** integration w
 ---
 
 ## Completed Tasks
-- Docker setup for PostgreSQL  
-- Connected Express server to PostgreSQL database  
+- Docker setup for PostgreSQL   
 - Implemented migration system for managing SQL schema files  
-- Created initial database schema (`users`, `accounts`, `categories`, `transactions`)  
-- Added TypeScript interfaces for all database entities  
+- Secure JWT authentication (access + refresh tokens)
+- User signup with email OTP (Redis + Nodemailer)
 
 ---
 
 ## Ongoing Development
-- Authentication (JWT & OAuth)  
-- Dummy data migrations for testing  
+- OAuth integration   
